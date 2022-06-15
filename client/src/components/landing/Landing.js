@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import anya from "./../../img/03.png"
 import { setCurrentUser } from "../../actions/authActions";
 
 import "./Landing.css";
@@ -26,35 +26,38 @@ class Landing extends React.Component {
                   <div>
                     <br />
                     <h2 className="display-5 mb-4">Chúc mừng bạn {user.name} đã bị lừa</h2>
+                    <img src={anya} style={{width: 120}}></img>
                   </div>
                 ) : (
-                  <div className="google-btn-container">
-                    <a href="/auth/google">
-                      <div className="google-btn">
-                        <div className="google-icon-wrapper">
-                          <img
-                            className="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                            alt="signin"
-                          />
+                  <div>
+                    <div className="google-btn-container">
+                      <a href="/auth/google">
+                        <div className="google-btn">
+                          <div className="google-icon-wrapper">
+                            <img
+                              className="google-icon"
+                              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                              alt="signin"
+                            />
+                          </div>
+                          <p className="btn-text">
+                            <b>Log in with Google</b>
+                          </p>
                         </div>
-                        <p className="btn-text">
-                          <b>Log in with Google</b>
-                        </p>
+                      </a>
+                    </div>
+                    <p></p>
+                    <div className="google-btn-container">
+                      <div className="google-btn">
+                        <a href="" target="_blank">
+                          <p className="btn-text">
+                            <b>Log in with Garena</b>
+                          </p>
+                        </a>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 )}
-                <p></p>
-                <div className="google-btn-container">
-                  <div className="google-btn">
-                    <a href="" target="_blank">
-                      <p className="btn-text">
-                        <b>Log in with Garena</b>
-                      </p>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
