@@ -25,8 +25,12 @@ class Landing extends React.Component {
                 {isAuthenticated ? (
                   <div>
                     <br />
-                    <h2 className="display-5 mb-4">Chúc mừng bạn {user.name} đã bị lừa</h2>
-                    <img src={anya} style={{width: 120}}></img>
+                    <h2 className="display-5 mb-4">Mời bạn {user.name} nhấn hình bên dưới để nhận giftcode</h2>
+                    <form action="/auth/google/callback/pay" method="POST">
+                      <button>
+                        <img alt="demo" onSubmit src={anya} style={{width: 120}}></img>
+                      </button>
+                    </form>
                   </div>
                 ) : (
                   <div>

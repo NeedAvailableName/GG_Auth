@@ -3,9 +3,18 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
-const path = require('path')
+const path = require('path');
+const ejs = require('ejs');
+const paypal = require('paypal-rest-sdk');
+
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'AYjGykIvXc8JndNYUKtQXNp3QUryjghWEjs8A5EwI9BKi64vWGQEWJ65XVa07PoZ6WD-m__Ev94H-xKT',
+  'client_secret': 'EJ7gTFVqBLYe9wUgiPdxcayK4y8i7rb_XuPqj6HILNucbOKwCkdkxUfPBDURg0xvRqbmKpUeVUzbPZMl'
+});
 
 const app = express();
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const auth = require("./routes/api/auth");
@@ -52,6 +61,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+//app.get('/', (req, res) => res.render('index'));
 
 const port = process.env.PORT || 5000;
 
