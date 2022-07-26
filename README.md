@@ -1,4 +1,4 @@
-"# GG_Auth_demo" 
+"#IT3402E - HUST - GG_Auth_demo & paypal" 
 1. Clone this repo
 2. Change direct to this repo
 3. npm i
