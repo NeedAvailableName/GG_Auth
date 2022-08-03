@@ -4,7 +4,9 @@ const passport = require("passport");
 const express = require("express");
 const paypal = require('paypal-rest-sdk');
 const app = express();
+const ejs = require('ejs');
 
+app.set('view engineer', 'ejs');
 module.exports = app => {
   /*app.get("/auth/test", (req, res) => {
     res.send("Auth Working properly");
@@ -105,7 +107,8 @@ module.exports = app => {
           throw error;
       } else {
           console.log(JSON.stringify(payment));
-          res.send('Success, this is your giftcode: ABCDEF123456');
+          // res.send('Success, this is your giftcode: ABCDEF123456');
+          res.render('giftcode');
       }
     });
   });
